@@ -1,14 +1,13 @@
-import { useState, useRef } from "react";
+import { useRef } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
-  // const [menuOpen, setMenuOpen] = useState(false);
   const menu = useRef(false);
+
   const expandMenu = () => {
     document.getElementById("menu-list").style.animation = "none";
     document.getElementById("list").animation = "none";
-    //setMenuOpen(!menuOpen);
     if (menu.current) {
       document.getElementById("menu-list").style.animation =
         "squeeze 0.7s ease";
@@ -28,19 +27,21 @@ function Navbar() {
     <div id="navbar">
       <button onClick={expandMenu}>&#x2630;</button>
       <div id="menu-list" className="menu-closed" onClick={expandMenu}>
-        <ul id="list" className="list-hidden">
-          <Link className="link">
+        <ul id="list" className="list-none">
+          <Link className="link" to="*">
             <li>What is it</li>
           </Link>
-          <Link className="link">
+          <Link className="link" to="*">
             <li>Perks</li>
           </Link>
-          <Link className="link">
+          <Link className="link" to="/pricing">
             <li>Pricing</li>
           </Link>
         </ul>
       </div>
-      <p>exp|con</p>
+      <Link className="link home-link" to="/">
+        exp|con
+      </Link>
     </div>
   );
 }

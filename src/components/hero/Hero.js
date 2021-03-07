@@ -7,31 +7,52 @@ import "./Hero.css";
 
 function Hero() {
   const images = [image1, image2, image3];
-  const nextImage = useRef(1);
+  const imageShown = useRef(0);
   useEffect(() => {
-    // save intervalId to clear the interval when the component re-renders
-    const intervalId = setInterval(() => {
-      nextImage.current = nextImage.current === 2 ? 0 : nextImage.current + 1;
-      document.getElementById("hero").style.animation = "none";
-      document.getElementById("hero").style.animation = "test 1s";
-      //   document.getElementById("hero").style.backgroundImage =
-      //     "url(" + images[nextImage.current] + ")";
-    }, 2500);
+    interval();
     // clear interval on re-render to avoid memory leaks
-    return () => clearInterval(intervalId);
+    return () => window.clearInterval(window.intervalId);
   }, []);
 
+  const interval = () => {
+    // save intervalId to clear the interval when the component re-renders
+    window.intervalId = setInterval(() => {
+      //switching between images every 10sec.
+      imageShown.current =
+        imageShown.current === 2 ? 0 : imageShown.current + 1;
+      document.getElementById("hero").style.animation = "none";
+      changeImage(imageShown.current);
+    }, 10000);
+  };
+
   const handleSlider = e => {
-    console.log(e.target.id);
+    //onclick - reset time interval and change image
+    window.clearInterval(window.intervalId);
+    imageShown.current = +e.target.id;
+    changeImage(e.target.id);
+    interval();
+  };
+
+  const changeImage = e => {
+    //assing active class to slider button clicked; other slider buttons are set to basic class
+    let sliders = document.getElementsByName("slider");
+    [...sliders].forEach(el => {
+      el.className = "slider";
+    });
+    document.getElementById(e).className = "slider-active";
     document.getElementById("hero").style.backgroundImage =
-      "url(" + e.target.id + ")";
+      "url(" + images[e] + ")";
   };
 
   const buttons = images.map((btn, index) => {
     return (
-      <button id={btn} key={btn} onClick={e => handleSlider(e)}>
-        A
-      </button>
+      <div
+        id={index}
+        key={btn}
+        name="slider"
+        onClick={e => handleSlider(e)}
+        className={index === 0 ? "slider-active" : "slider"}
+      ></div>
     );
   });
 

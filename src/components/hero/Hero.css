@@ -18,18 +18,52 @@
 #hero h3 {
   color: white;
 }
-
 .sliders {
   position: absolute;
   bottom: 30px;
   display: flex;
   flex-direction: row;
 }
-.sliders button {
-  margin: 10px;
-}
 
-@keyframes test {
+.slider {
+  margin: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+}
+.slider:hover {
+  background-color: #c7c7c7;
+}
+.slider:clicked {
+  background-color: red;
+}
+.slider-active {
+  margin: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 10px;
+  height: 10px;
+  background-color: white;
+}
+/* .slider::after {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  display: "block";
+  content: "";
+
+  border: 1px solid white;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+  background-color: white;
+} */
+
+/* @keyframes test {
   0% {
     opacity: 1;
   }
@@ -39,4 +73,4 @@
   100% {
     opacity: 1;
   }
-}
+} */
