@@ -4,7 +4,7 @@ import "./Mainpage.css";
 
 function Mainpage() {
   return (
-    <div>
+    <div id="mainpage">
       <Hero />
       <Red />
     </div>
