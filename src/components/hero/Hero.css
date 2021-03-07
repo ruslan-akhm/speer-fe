@@ -5,7 +5,18 @@
   align-items: center;
   flex-direction: column;
   text-align: center;
+  background-image: url("../../img/1.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: black;
   position: relative;
+}
+#hero h1 {
+  text-transform: uppercase;
+}
+#hero h1,
+#hero h3 {
+  color: white;
 }
 
 .sliders {
@@ -16,4 +27,16 @@
 }
 .sliders button {
   margin: 10px;
+}
+
+@keyframes test {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

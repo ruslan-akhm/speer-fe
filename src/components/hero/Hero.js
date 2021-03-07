@@ -1,4 +1,5 @@
-import { useEffect } from "react";
+import { useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import image1 from "../../img/1.jpg";
 import image2 from "../../img/2.jpg";
 import image3 from "../../img/3.jpg";
@@ -6,23 +7,29 @@ import "./Hero.css";
 
 function Hero() {
   const images = [image1, image2, image3];
-
+  const nextImage = useRef(1);
   useEffect(() => {
     // save intervalId to clear the interval when the component re-renders
     const intervalId = setInterval(() => {
-      //console.log("HERE");
-    }, 10000);
+      nextImage.current = nextImage.current === 2 ? 0 : nextImage.current + 1;
+      document.getElementById("hero").style.animation = "none";
+      document.getElementById("hero").style.animation = "test 1s";
+      //   document.getElementById("hero").style.backgroundImage =
+      //     "url(" + images[nextImage.current] + ")";
+    }, 2500);
     // clear interval on re-render to avoid memory leaks
     return () => clearInterval(intervalId);
   }, []);
 
   const handleSlider = e => {
-    console.log(typeof e.target.id);
+    console.log(e.target.id);
+    document.getElementById("hero").style.backgroundImage =
+      "url(" + e.target.id + ")";
   };
 
   const buttons = images.map((btn, index) => {
     return (
-      <button id={index} key={btn} onClick={e => handleSlider(e)}>
+      <button id={btn} key={btn} onClick={e => handleSlider(e)}>
         A
       </button>
     );
@@ -35,7 +42,9 @@ function Hero() {
         Experience your favourite artists like never <br /> before and from the
         comfort of your own home
       </h3>
-      <button>CLICK</button>
+      <Link to="/pricing">
+        <button>CLICK</button>
+      </Link>
       <div className="sliders">{buttons}</div>
     </div>
   );
