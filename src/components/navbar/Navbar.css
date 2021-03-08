@@ -41,7 +41,7 @@
 }
 .menu-closed {
   background-color: black;
-  left: 7px;
+  left: 8px;
   top: 10px;
   width: var(--width-menu-closed);
   height: var(--height-menu-closed);
@@ -80,7 +80,7 @@
 
 @keyframes expand {
   from {
-    left: 7px;
+    left: 8px;
     top: 10px;
     width: var(--width-menu-closed);
     height: var(--height-menu-closed);
