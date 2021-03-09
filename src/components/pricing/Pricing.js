@@ -3,15 +3,15 @@ import plans from "../data/plans";
 import perks from "../data/perks";
 
 function Pricing() {
-  const plansList = plans.map(plan => {
+  const plansList = plans.map((plan, index) => {
     return (
-      <div id={plan.type} className="plan-card">
+      <div id={plan.type} className="plan-card" key={index}>
         <h3>{plan.type}</h3>
         <h3>{plan.charged}</h3>
         <h1>${plan.price}</h1>
         <ul>
-          {plan.specs.map(item => {
-            return <li>&#x266A; {item}</li>;
+          {plan.specs.map((item, index) => {
+            return <li key={index}>&#x266A; {item}</li>;
           })}
         </ul>
         <button>select</button>
@@ -19,9 +19,9 @@ function Pricing() {
     );
   });
 
-  const perksList = perks.map(perk => {
+  const perksList = perks.map((perk, index) => {
     return (
-      <li>
+      <li key={index}>
         <h2>{perk.title}</h2>
         <p>{perk.text}</p>
       </li>

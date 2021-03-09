@@ -16,7 +16,7 @@ Front-end part of the assessment
 
 ```sh
 $ git clone https://github.com/ruslan-akhm/speer-fe.git
-$ cd my-app
+$ cd speer-fe
 $ npm install
 $ npm start
 ```
