@@ -89,7 +89,7 @@ function Hero() {
     // save intervalId to clear the interval when the component re-renders
     window.intervalId = setInterval(() => {
       spinCarouselAuto();
-    }, 3000);
+    }, 10000);
   };
 
   const buttons = images.map((btn, index) => {
