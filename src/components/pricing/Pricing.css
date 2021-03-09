@@ -1,0 +1,152 @@
+#pricing {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #1f1e1e;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20vh;
+}
+.pricing-info {
+  height: 20vh;
+  width: 100%;
+  color: white;
+  padding-bottom: 5vh;
+}
+.pricing-info h1,
+.pricing-info h2 {
+  margin: 0 10vw 5vh 10vw;
+}
+.pricing-plans {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10vh 0 10vh 0;
+}
+.plan-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px;
+  margin: 20px 35px 0 35px;
+}
+.plan-card h3:nth-child(1)::after {
+  display: block;
+  content: "";
+  width: 60px;
+  height: 3px;
+  margin: 10px 0 10px 0;
+}
+.plan-card h1,
+.plan-card h3 {
+  font-size: 34px;
+  margin: 0px auto 0px 0;
+  width: fit-content;
+  text-transform: uppercase;
+}
+.plan-card h1 {
+  font-size: 56px;
+  margin: 10px auto 10px 0;
+}
+.plan-card ul,
+.plan-card ul li,
+.pricing-perks ul,
+.pricing-perks ul li {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color: white;
+}
+.plan-card ul li {
+  margin: 5px 0 5px 0;
+  font-size: 26px;
+}
+.plan-card button {
+  border: none;
+  border-radius: 25px;
+  text-transform: uppercase;
+  color: white;
+  padding: 10px;
+  width: 120px;
+  margin-top: 10px;
+  cursor: pointer;
+  font-weight: bold;
+}
+#basic h3,
+#basic h1 {
+  color: #eb4034;
+}
+#basic h3:nth-child(1)::after,
+#basic button {
+  background-color: #eb4034;
+}
+
+#advanced h3,
+#advanced h1 {
+  color: #e3d15b;
+}
+#advanced h3:nth-child(1)::after,
+#advanced button {
+  background-color: #e3d15b;
+}
+
+#pro h3,
+#pro h1 {
+  color: #5be3e3;
+}
+#pro h3:nth-child(1)::after,
+#pro button {
+  background-color: #5be3e3;
+}
+.pricing-perks {
+  display: flex;
+  flex-direction: column;
+  min-height: 40vh;
+  width: 100%;
+  background-color: #eb4034;
+  padding: 10vh 0 10vh 0;
+}
+.pricing-perks ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.pricing-perks ul li {
+  width: 300px;
+  padding: 15px;
+
+  margin: 20px 35px 0 35px;
+}
+.pricing-perks h1 {
+  color: white;
+  margin: 0 10vw 0 10vw;
+}
+.pricing-perks ul li h2::before {
+  display: block;
+  content: "";
+  width: 60px;
+  height: 2px;
+  background-color: white;
+  margin-bottom: 10px;
+}
+.pricing-perks p {
+  color: black;
+}
+.pricing-footer {
+  background-color: #4c46bd;
+  min-height: 20vh;
+  width: 100%;
+  padding: 10vh 0 5vh 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.pricing-footer h2 {
+  color: white;
+}
